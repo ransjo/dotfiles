@@ -1,0 +1,11 @@
+alias xc="xclip"
+alias xcc="xclip -selection clipboard"
+alias xcv="xclip -o"
+alias ls="ls --color=auto -F"
+alias la="ls -ha"
+alias ll="ls -hl"
+alias lla="ls -la"
+alias em="emacs"
+alias emt="emacs -nw"
+alias grep="/usr/bin/grep $GREP_OPTIONS"
+unset GREP_OPTIONS

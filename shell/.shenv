@@ -1,0 +1,7 @@
+export EDITOR="emacs"
+export VISUAL="emacs"
+export PATH=$HOME/bin:/usr/local/bin:~/.cabal/bin:$PATH
+export ARCHFLAGS="-arch x86_64"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+export CLASSPATH=$CLASSPATH:~/src/java/

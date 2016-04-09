@@ -1,0 +1,38 @@
+!#include "/home/ashi/.colors/colors"
+!#include "/home/ashi/.colors/erosion"
+!#include "/home/ashi/.colors/solarized"
+!#include "/home/ashi/.colors/clearlse"
+#include "/home/ashi/.colors/tango"
+!#include "/home/ashi/.colors/sicp"
+
+! Xft settings
+Xft.dpi:	96
+Xft.antialias:	true
+Xft.rgba:	rgb
+Xft.hinting:	true
+Xft.hintstyle:	hintslight
+
+! URxvt settings
+
+URxvt*depth:		32
+URxvt*scrollBar:	false
+URxvt*cursorBlink:	true
+URxvt*cursorUnderline:	false
+URxvt*fading:		15
+urxvt*fadeColor:	#000000
+
+URxvt.font: xft:Terminus:pixelsize=12
+URxvt.boldfont: xft:Terminus:pixelsize=12
+
+URxvt.letterSpace: -2
+
+urxvt*perl-lib:		/usr/lib/urxvt/perl
+URxvt.perl-ext-common:      default,matcher,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  chromium
+urxvt*perl-matcher:	    1
+urxvt*matcher-button:	    1
+urxvt*urlLauncher:	    /usr/bin/chromium
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
