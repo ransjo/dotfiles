@@ -6,10 +6,12 @@
 !#include "/home/ashi/.colors/sicp"
 
 ! Xft settings
-Xft.dpi:	96
-Xft.antialias:	true
+! Xft.dpi:	120
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.antialias:	1
 Xft.rgba:	rgb
-Xft.hinting:	true
+Xft.hinting:	1
 Xft.hintstyle:	hintslight
 
 ! URxvt settings
@@ -21,8 +23,8 @@ URxvt*cursorUnderline:	false
 URxvt*fading:		15
 urxvt*fadeColor:	#000000
 
-URxvt.font: xft:Terminus:pixelsize=12
-URxvt.boldfont: xft:Terminus:pixelsize=12
+URxvt.font: xft:Terminus:pixelsize=14
+URxvt.boldfont: xft:Terminus:pixelsize=14
 
 URxvt.letterSpace: -2
 

@@ -33,7 +33,9 @@ import XMonad.Actions.WindowBringer
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "urxvtc"
+myTerminal      = "st -e tmux"
+sTerminal = "st"
+scratchTerminal = "urxvtc"
 
 -- Width of the window border in pixels.
 --
@@ -64,8 +66,8 @@ myFocusedBorderColor = "#ff0000"
 
 
 scratchConsole name l t w h = NS name (spawnConsole name) (findConsole name) (manageConsole l t w h)
-  where spawnConsole name = myTerminal ++ " -name " ++ name
-        findConsole name = resource  =? name
+  where spawnConsole name = scratchTerminal ++ " -name " ++ name 
+        findConsole name = resource =? name
         manageConsole l t w h = customFloating $ W.RationalRect l t w h
 
 myScratchpads = [ scratchConsole "bottom-console" ((1 - w) / 2) (1 - h) w h

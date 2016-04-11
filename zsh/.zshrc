@@ -42,6 +42,7 @@ plugins=(git archlinux zsh-syntax-highlighting history-substring-search virtuale
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.shpath
 
 # Functions
 mkcd() { mkdir $1; cd $1 }

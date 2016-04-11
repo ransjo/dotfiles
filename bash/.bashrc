@@ -27,3 +27,7 @@ fi
 if [ -f ~/.shenv ]; then
     . ~/.shenv
 fi
+
+if [ -f ~/.shpath ]; then
+    . ~/.shpath
+fi
