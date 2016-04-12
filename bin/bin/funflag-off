@@ -1,3 +1,0 @@
-#!/bin/bash
-DRI_PRIME=1 glxinfo > /dev/null
-rm /tmp/funflag
