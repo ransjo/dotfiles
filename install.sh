@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 [[ -d ~/.config ]] || mkdir ~/.config
 [[ -d ~/.oh-my-zsh ]] || git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
