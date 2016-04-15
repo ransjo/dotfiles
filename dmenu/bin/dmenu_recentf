@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ -f $HOME/.dmenurc ]]; then
+    . $HOME/.dmenurc
+else
+    DMENU='dmenu -i'
+fi
+
+recentf="$HOME/.emacs.d/recentf"
+regexp='s/"\(.*\)"/\1/p'
+
+prompt="recentf:"
+
+spawn() {
+    $EDITOR $1
+}
+
+target=$(cat $recentf | sed -n $regexp | ${DMENU} -p "$prompt")
+
+
+if [[ -n $target ]]; then
+    spawn $target
+fi

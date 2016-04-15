@@ -33,8 +33,8 @@ import XMonad.Actions.WindowBringer
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "st -e tmux"
 sTerminal = "st"
+myTerminal      = sTerminal ++ " -e tmux"
 scratchTerminal = "urxvtc"
 
 -- Width of the window border in pixels.
@@ -66,7 +66,7 @@ myFocusedBorderColor = "#ff0000"
 
 
 scratchConsole name l t w h = NS name (spawnConsole name) (findConsole name) (manageConsole l t w h)
-  where spawnConsole name = scratchTerminal ++ " -name " ++ name 
+  where spawnConsole name = scratchTerminal ++ " -name " ++ name
         findConsole name = resource =? name
         manageConsole l t w h = customFloating $ W.RationalRect l t w h
 
@@ -75,6 +75,7 @@ myScratchpads = [ scratchConsole "bottom-console" ((1 - w) / 2) (1 - h) w h
   where w = 0.5
         h = 0.3
 
+dmenu = "dmwrapper"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -88,9 +89,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_o), namedScratchpadAction myScratchpads "bottom-console")
     , ((modMask,               xK_i), namedScratchpadAction myScratchpads "top-console")
 
+    , ((modMask .|. controlMask, xK_Return), spawn $ sTerminal)
       -- Window Bringer
-    , ((modMask,               xK_r), gotoMenu)
-    , ((modMask .|. shiftMask, xK_r), bringMenu)
+    , ((modMask,               xK_r), gotoMenuArgs' dmenu ["-p", "Goto", "-l", "10"])
+    , ((modMask .|. shiftMask, xK_r), bringMenuArgs' dmenu ["-p", "Bring", "-l", "10"])
 
       -- launch emacs
     , ((modMask,               xK_e     ), spawn "~/bin/edit")
@@ -98,7 +100,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_t     ), spawn "~/bin/eterm")
 
     -- launch dmenu
-    , ((modMask,               xK_d     ), spawn "dmenu_run")
+	, ((modMask, xK_d ), spawn "dmenu_recent")
 
     -- launch gmrun
     , ((modMask .|. shiftMask, xK_p     ), spawn "xfce4-appfinder")
@@ -260,6 +262,7 @@ myLayout =  maximize (tiled) ||| Full ||| funLayout
 --
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
+    , className =? "mpv"            --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "Xfce4-appfinder"  --> doFloat
     , className =? "Xfrun4"           --> doFloat

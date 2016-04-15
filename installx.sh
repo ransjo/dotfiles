@@ -1,6 +1,13 @@
 #!/bin/bash
 
-[[ -d ~/.xmonad ]] || mkdir ~/.xmonad
+dirs=".xmonad"
+for d in $dirs;
+do
+	(mkdir -p $dir)
+done
 
-stow -R x
-stow -R .xmonad
+packages="x dmenu .xmonad"
+for package in $packages;
+do
+    ( stow -R $package )
+done

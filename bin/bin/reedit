@@ -1,7 +1,0 @@
-#!/bin/bash
-
-$EDITOR=nano
-if [ -z "$1" ]
-then
-
-fi

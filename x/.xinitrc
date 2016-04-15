@@ -19,8 +19,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
-#compton &
+compton -CGb
+
+~/keyboard/se.sh
+~/keyboard/sticky.sh
 
 exec dbus-launch startxfce4
 #exec xmonad
-sh ~/keyboard/se.sh

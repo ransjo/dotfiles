@@ -1,3 +1,4 @@
+export TERMINAL="st"
 export EDITOR="emacs"
 export VISUAL="emacs"
 export ARCHFLAGS="-arch x86_64"

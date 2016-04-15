@@ -38,3 +38,12 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
+
+! Emacs
+! UI elements
+! Emacs.menuBar: 0
+! Emacs.toolBar: 0
+! Emacs.verticalScrollBars: off
+! Font settings
+! Emacs.FontBackend: xft,x
+! Emacs.font: Inconsolata-g:size=9

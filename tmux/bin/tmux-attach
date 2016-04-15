@@ -1,0 +1,18 @@
+#!/bin/bash
+
+session=$1
+
+if [[ $# -lt 1 ]]; then
+    echo "usage: attach <session>"
+    exit 1
+fi
+
+if ! tmux has-session -t "$session"; then
+    tmux new-session -s "$session" || exit 1
+fi
+
+if [[ -n $TMUX ]]; then
+    tmux switch-client -t "$session" || exit 1
+else
+    tmux attach-session -t "$session" || exit 1
+fi

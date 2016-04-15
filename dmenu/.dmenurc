@@ -1,0 +1,20 @@
+w=1920
+h=1080
+width=960
+height=40
+lines=10
+x=$((($w - $width) / 2))
+y=$((($h - $height * $lines) / 2))
+font="Inconsolata-g-9"
+nb='#333333'
+nf='#bbbbbb'
+sb='#2a2a2a'
+sb="#5E58a2"
+sf='#ffffff'
+dc="#001"
+opacity=0.95
+dim=0.4
+
+DMENU="dmenu -i -nb $nb -nf $nf -sb $sb -sf $sf -fn $font\
+             -x $x -y $y -w $width -h $height\
+             -l $lines -dim $dim -o $opacity -dc $dc"

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ -f $HOME/.dmenurc ]]; then
+    . $HOME/.dmenurc
+else
+    DMENU='dmenu -i'
+fi
+
+attach="$HOME/bin/tmux-attach"
+sessions="$(tmux list-sessions -F '#S')"
+prompt="attach:"
+
+spawn() {
+    $TERMINAL -t "$1" -e $attach $1
+}
+
+target=$(echo $sessions | sed 's/ /\n/g' | sort -u | ${DMENU} -p "$prompt")
+
+if [[ -n $target ]]; then
+    spawn $target
+fi
