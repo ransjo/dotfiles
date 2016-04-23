@@ -1,2 +1,2 @@
 #!/bin/sh
-exec emacsclient --alternate-editor="" -c -e "(multi-term)"
+exec emacsclient --alternate-editor="emacs" -n -c -e "(multi-term)"

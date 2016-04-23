@@ -10,9 +10,10 @@ recentf="$HOME/.emacs.d/recentf"
 regexp='s/"\(.*\)"/\1/p'
 
 prompt="recentf:"
+editor="emacsclient --alternate-editor=emacs -c -n"
 
 spawn() {
-    $EDITOR $1
+    $editor $1 &
 }
 
 target=$(cat $recentf | sed -n $regexp | ${DMENU} -p "$prompt")

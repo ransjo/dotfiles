@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ -f $HOME/.dmenurc ]]; then
+    . $HOME/.dmenurc
+fi
+
+if [ -z ${DMENU_LARGE+x} ]; then
+   DMENU_LARGE='dmenu -i'
+fi
+
+gksudo dmenu_connman "$DMENU_LARGE"

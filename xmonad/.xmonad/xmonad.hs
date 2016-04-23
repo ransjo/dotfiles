@@ -83,7 +83,7 @@ dmenu = "dmwrapper"
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- launch a terminal
-    [ ((modMask,		xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modMask, xK_Return), spawn $ XMonad.terminal conf)
 
       -- launch scratch console
     , ((modMask,               xK_o), namedScratchpadAction myScratchpads "bottom-console")
@@ -91,16 +91,18 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modMask .|. controlMask, xK_Return), spawn $ sTerminal)
       -- Window Bringer
-    , ((modMask,               xK_r), gotoMenuArgs' dmenu ["-p", "Goto", "-l", "10"])
-    , ((modMask .|. shiftMask, xK_r), bringMenuArgs' dmenu ["-p", "Bring", "-l", "10"])
+    , ((modMask,               xK_y), gotoMenuArgs' dmenu ["-p", "Goto", "-l", "10"])
+    , ((modMask .|. shiftMask, xK_y), bringMenuArgs' dmenu ["-p", "Bring", "-l", "10"])
 
       -- launch emacs
     , ((modMask,               xK_e     ), spawn "~/bin/edit")
     , ((modMask,               xK_f     ), spawn "~/bin/edir")
-    , ((modMask,               xK_t     ), spawn "~/bin/eterm")
+    , ((modMask .|. shiftMask, xK_f     ), spawn "~/bin/eterm")
 
     -- launch dmenu
-	, ((modMask, xK_d ), spawn "dmenu_recent")
+    , ((modMask, xK_d ), spawn "dmenu_recent")
+    , ((modMask,               xK_t     ), spawn "~/bin/dmenu_tmux")
+    , ((modMask,               xK_r     ), spawn "~/bin/dmenu_recentf")
 
     -- launch gmrun
     , ((modMask .|. shiftMask, xK_p     ), spawn "xfce4-appfinder")
@@ -330,5 +332,5 @@ defaults = defaultConfig {
         manageHook         = manageDocks <+> myManageHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook,
-	handleEventHook = ewmhDesktopsEventHook
+        handleEventHook = ewmhDesktopsEventHook
     }
