@@ -2,11 +2,12 @@
 !#include "/home/ashi/.colors/erosion"
 !#include "/home/ashi/.colors/solarized"
 !#include "/home/ashi/.colors/clearlse"
-#include "/home/ashi/.colors/tango"
+!#include "/home/ashi/.colors/tango"
+#include "/home/ashi/.colors/ashi2"
 !#include "/home/ashi/.colors/sicp"
 
 ! Xft settings
-! Xft.dpi:	120
+Xft.dpi:	141
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.antialias:	1
@@ -23,8 +24,10 @@ URxvt*cursorUnderline:	false
 URxvt*fading:		15
 urxvt*fadeColor:	#000000
 
-URxvt.font: xft:Terminus:pixelsize=14
-URxvt.boldfont: xft:Terminus:pixelsize=14
+!URxvt.font: xft:Terminus:pixelsize=14
+!URxvt.boldfont: xft:Terminus:pixelsize=14
+URxvt.font: xft:Inconsolata-g:size=10
+URxvt.boldfont: xft:Inconsolata-g:size=10
 
 URxvt.letterSpace: -2
 
@@ -46,4 +49,4 @@ Emacs.toolBar: 0
 Emacs.verticalScrollBars: off
 ! Font settings
 Emacs.FontBackend: xft,x
-Emacs.font: Inconsolata-g:size=9
+!Emacs.font: Inconsolata-g:size=9

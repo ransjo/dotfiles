@@ -10,4 +10,6 @@ alias du="du -h"
 alias em="emacs"
 alias emt="emacs -nw"
 alias grep="/usr/bin/grep $GREP_OPTIONS"
+alias au="aunpack"
+alias ap="apack"
 unset GREP_OPTIONS
