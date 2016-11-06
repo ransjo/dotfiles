@@ -1,2 +1,2 @@
 #!/bin/sh
-exec emacsclient --alternate-editor="" -n -c -e "(dired-jump)"
+exec emacsclient --alternate-editor="" -c -e "(dired-jump)"
