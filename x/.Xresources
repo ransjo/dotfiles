@@ -44,9 +44,10 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 
 ! Emacs
 ! UI elements
-Emacs.menuBar: 0
-Emacs.toolBar: 0
-Emacs.verticalScrollBars: off
+emacs.menuBar: off
+emacs.verticalScrollBars: off
+emacs.horizontalScrollbars: off
+emacs.toolBar: off
 ! Font settings
-Emacs.FontBackend: xft,x
-!Emacs.font: Inconsolata-g:size=9
+emacs.FontBackend: xft
+! Emacs.font: Inconsolata-g:size=14

@@ -1,2 +1,2 @@
 #!/bin/sh
-xcape -e 'Control_L=Escape' -t 300
+xcape -e 'Control_L=Escape' -t .175

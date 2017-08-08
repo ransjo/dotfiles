@@ -15,7 +15,6 @@ import qualified Data.Map        as M
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicLog
 
@@ -33,8 +32,10 @@ import XMonad.Actions.WindowBringer
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-sTerminal = "st"
-myTerminal      = sTerminal ++ " -e tmux"
+-- sTerminal = "st"
+-- myTerminal      = sTerminal ++ " -e tmux"
+sTerminal = "urxvtc"
+myTerminal = sTerminal
 scratchTerminal = "urxvtc"
 
 -- Width of the window border in pixels.
@@ -305,7 +306,7 @@ myStartupHook = ewmhDesktopsStartup >> setWMName "LG3D"
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad defaults
+main = xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -313,7 +314,7 @@ main = xmonad defaults
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

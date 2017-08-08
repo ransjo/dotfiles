@@ -10,7 +10,7 @@ done
 [[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 [[ -d ~/.tmux/plugins/tpm ]] || git clone git://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-packages="bash bin input media shell tmux zsh dev"
+packages="bash bin media shell tmux zsh dev"
 for package in $packages;
 do
     ( stow -R $package )

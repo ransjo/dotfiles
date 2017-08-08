@@ -1,3 +1,6 @@
+# Workaround to get tramp working
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 # ZSH_CUSTOM=/path/to/new-cusom-folder
@@ -38,7 +41,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux virtualenv npm fasd tmux history-substring-search zsh-syntax-highlighting)
+plugins=(git archlinux virtualenv npm fasd tmux history-substring-search zsh-syntax-highlighting docker k)
+
+source /opt/google-cloud-sdk/path.zsh.inc
+autoload -U compinit compdef
+compinit
+source /opt/google-cloud-sdk/completion.zsh.inc
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases

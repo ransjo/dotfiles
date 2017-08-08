@@ -22,7 +22,7 @@ xrdb -merge ~/.Xresources
 compton -CGb
 sh ~/.fehbg &
 
-~/keyboard/se.sh
+#~/keyboard/se.sh
 
 exec dbus-launch startxfce4
 cmst -m -w 3&

@@ -10,3 +10,19 @@
 "amixer set Master toggle"
    m:0x0 + c:121
    XF86AudioMute
+
+# "xdotool key Up"
+# b:4
+
+# "xdotool key Down"
+# b:5
+
+# "xdotool key Left"
+# b:6
+
+# "xdotool key Right"
+# b:7
+
+# # to have Modifier+left etc. just repeat above with modifiers like this:
+# "xdotool key Up"
+# Control + b:4
